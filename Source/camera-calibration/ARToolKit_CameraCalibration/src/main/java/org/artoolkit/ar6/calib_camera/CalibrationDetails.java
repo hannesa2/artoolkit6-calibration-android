@@ -130,7 +130,6 @@ public class CalibrationDetails extends Activity implements OnChartValueSelected
         barData.setValueTextSize(10f);
         mCalibrationChart.setFitBars(true);
         mCalibrationChart.setData(barData);
-        mCalibrationChart.setDescription("");
         mCalibrationChart.getLegend().setEnabled(false);
         YAxis axisLeft = mCalibrationChart.getAxisLeft();
         axisLeft.setEnabled(false);
@@ -175,7 +174,7 @@ public class CalibrationDetails extends Activity implements OnChartValueSelected
 
                 Log.i("TAG","Selected value" + selectedValueX);
 
-                mCalibrationChart.getData().getDataSetByIndex(0).removeEntryByXPos(selectedValueX);
+                mCalibrationChart.getData().getDataSetByIndex(0).removeEntryByXValue(selectedValueX);
                 mCalibrationChart.invalidate();
 
                 mRemovedFrames.add(mCalibrator.getFrame(selectedValueX));
